@@ -1,0 +1,36 @@
+@import '../../styles/base';
+
+.xoces-hierarchical-list-search {
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1rem;
+}
+
+
+.xoces-hierarchical-list-search.dark {
+  background: #303030;
+  color: #f0f0f0;
+}
+
+.xoces-hierarchical-list-search.light {
+  background: transparent;
+  color: #333;
+}
+
+.level__entity-title {
+  font-weight: 500;
+  padding-top: .75rem;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #aaa;
+  margin-top: 0;
+  margin-bottom: calc(1.5rem - 3px);
+}
+
+.level-entities {
+  list-style: none;
+}
+
+.level__entity-title__type {
+  font-weight: 300;
+  text-transform: capitalize;
+}
