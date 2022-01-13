@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as d3 from 'd3';
 import {arcEnterTween, arcExitTween, ARC_TRANSITION_DURATION} from './animation'
 import {getScheme} from './style'
