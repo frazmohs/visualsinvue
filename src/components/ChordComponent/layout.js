@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const _ = require('lodash')
 import graphProvider from '../graph'
 import {
@@ -139,7 +140,7 @@ export const computeLayout = (props) => {
       return _.find(childrenAll, m => graph.isSourceOf(m, r));
     })
 
-    if (!sourceArc) return null;;
+    if (!sourceArc) return null;
 
     let targetArc = _.find(subArcs, arc => {
       // if the target is in one of the subarcs, return the model

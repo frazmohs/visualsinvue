@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import _ from 'lodash'
 import chroma from 'chroma-js'
 
