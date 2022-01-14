@@ -1,0 +1,74 @@
+<script>
+/* eslint-disable no-unused-vars */
+import * as d3 from 'd3-selection'
+import _ from 'lodash'
+import pluralize from 'pluralize'
+
+export default {
+    name: 'ExpandHideListItem',
+    data(){
+        return {
+            isExpanded: {
+                type: Boolean,
+                default: false
+            }
+        }
+    },
+    methods:{
+        render(){
+                let props = this.props;
+    let data = props.data;
+    let graph = props.graph;
+    let entityLabelKey = props.entityLabelKey;
+    let currentLevelEntity = props.currentLevelEntity;
+    let e = props.entity;
+
+    let idx = props.hierarchy.indexOf(currentLevelEntity.type);
+    let gcType = props.hierarchy[idx+2];
+    let gc = _.filter(graph.getChildren(e.id, data.entities, data.relationships), {type: gcType});
+
+    let levelSummary;
+    let showHideButton;
+    if (gcType) {
+      levelSummary = (<p className="level__summary">{gc.length} {pluralize(gcType, gc.length)}</p>)
+      showHideButton = (
+        <button className="xoces-button level__show-hide-button"
+                onClick={() => this.setState({isExpanded: !this.state.isExpanded})}
+          >[{this.state.isExpanded ? 'Less' : 'More'}]
+        </button>)
+    }
+
+    let grandChildrenList;
+    if (this.state.isExpanded && gcType) {
+      grandChildrenList = (
+        <ol className="no-bottom-margin">
+          {_.map(gc, model => {
+            return (
+              <li className="level__entity__grandchild" key={`grandChild-${model.id}`}>
+                {model[entityLabelKey]}
+              </li>
+            )
+          })}
+        </ol>
+      )
+    }
+
+    let isSelected = props.selectedEntities.indexOf(e) > -1 ? 'is-selected' : null;
+
+    return (
+      <div key={`entity-${e.id}`} className="level__entity__item">
+        <div className="flex-container align-center space-between flex-wrap">
+          <div className="level__entity-select flex-container align-center" onClick={() => this.props.onToggleEntity(e)}>
+            <div className={`level__entity__checkbox ${isSelected}`}></div>
+            <span className="level__entity__name">{e[entityLabelKey]}</span>
+          </div>
+          {showHideButton}
+        </div>
+        {levelSummary}
+        {grandChildrenList}
+      </div>
+    )
+        }
+    }
+}
+</script>
