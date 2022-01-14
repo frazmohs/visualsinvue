@@ -6,6 +6,7 @@ import pluralize from 'pluralize'
 
 export default {
     name: 'ExpandHideListItem',
+    props: ['data', 'entity', 'hierarchy', 'entityLabelKey', 'currentLevelEntity', 'selectedEntities', 'graph', 'onToggleEntity'],
     data(){
         return {
             isExpanded: {
