@@ -1,4 +1,5 @@
 {
+  "vetur.ignoreProjectWarning": true,
   "name": "visualsinvue",
   "version": "0.1.0",
   "private": true,

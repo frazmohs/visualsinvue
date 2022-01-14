@@ -1,4 +1,6 @@
+<script>
 /* eslint-disable no-unused-vars */
+import { defineComponent } from '@vue/composition-api'
 import * as d3 from "d3-selection"
 import "./ChordComponent.scss"
 import { computeDimensions, computeLayout } from "./layout"
@@ -17,7 +19,6 @@ import {
 import { getScheme, stylize } from "./style"
 import { attachEvent, detachEvent } from "./events"
 
-// export component
 export default {
   name: "ChordComponent",
   data() {
@@ -27,7 +28,6 @@ export default {
     drawingGroup: this.drawingGroup
     }
   },
-  props:["w","h","drawingGroup"],
   methods: {
     _update(drawingGroup, w, h, props) {
       let { innerRadius, outerRadius } = computeDimensions(w, h)
@@ -113,7 +113,7 @@ export default {
 
     this._update(drawingGroup, w, h, this);
   },
-  destroyed() {
+  unmounted() {
     clearDrawing(this.drawingGroup);
   },
   updated(nextProps) {
@@ -138,3 +138,4 @@ export default {
   }
 
 }
+</script>
