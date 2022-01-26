@@ -21,14 +21,10 @@ import { getScheme, stylize } from "./style"
 import { attachEvent, detachEvent } from "./events"
 
 export default {
-  name: "ChordComponent",
-  data() {
-    return {
-    w: this.w,
-    h: this.h,
-    drawingGroup: this.drawingGroup
-    }
-  },
+  name: "chord-component",
+  props: ['drawingGroup', 'w','h','data', 'canvasId','colorScheme','onMouseOver','onMouseOut','onClickSubArc','onMouseOverFinish','onMouseOutFinis'
+  ,'onClickFinish']
+  ,
   methods: {
     _update(drawingGroup, w, h, props) {
       let { innerRadius, outerRadius } = computeDimensions(w, h)
@@ -108,9 +104,9 @@ export default {
       height: this.height,
       width: this.width
     });
-    this.w = w;
-    this.h = h;
-    this.drawingGroup = drawingGroup;
+    w = this.props.w;
+    h = this.props.h;
+    drawingGroup = this.props.drawingGroup;
 
     this._update(drawingGroup, w, h, this);
   },
@@ -130,9 +126,9 @@ export default {
     let canvas;
     let canvasId=this.props.canvasId
     if (!this.canvasId) {
-      canvas = (<svg id={`xocesChordComponentCanvas`} ref={(el) => { this.canvasId = el && el.id; }}></svg>);
+      canvas = (<svg id={`xocesChordComponentCanvas`} ref={(el) => { canvasId = el && el.id; }}></svg>);
     } else {
-      this.canvasId = this.props.canvasId;
+      canvasId = this.props.canvasId;
     }
 
     return <div>{canvas}</div>

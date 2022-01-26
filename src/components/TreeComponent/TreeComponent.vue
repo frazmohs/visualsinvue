@@ -11,7 +11,7 @@ import { init } from "../canvas"
 // export component
 export default {
   name: "tree-component",
-  props:['data', 'canvasId','onMouseOver','onMouseOut','onClickSubArc','onMouseOverFinish','onMouseOutFinis'
+  props:['data','colorScheme' ,'canvasId','onMouseOver','onMouseOut','onClickSubArc','onMouseOverFinish','onMouseOutFinis'
   ,'onClickFinish'],
   methods: {
     _update(drawingGroup, w, h, props) {
