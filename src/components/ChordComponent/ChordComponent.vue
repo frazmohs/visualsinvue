@@ -1,3 +1,4 @@
+
 <script>
 /* eslint-disable no-unused-vars */
 import { defineComponent } from '@vue/composition-api'
@@ -127,7 +128,7 @@ export default {
   render() {
     let scheme = getScheme(this.colorScheme);
     let canvas;
-
+    let canvasId=this.props.canvasId
     if (!this.canvasId) {
       canvas = (<svg id={`xocesChordComponentCanvas`} ref={(el) => { this.canvasId = el && el.id; }}></svg>);
     } else {
