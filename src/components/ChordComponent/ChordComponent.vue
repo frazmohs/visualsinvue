@@ -22,8 +22,8 @@ import { attachEvent, detachEvent } from "./events"
 
 export default {
   name: "chord-component",
-  props: ['drawingGroup', 'w','h','data', 'canvasId','colorScheme','onMouseOver','onMouseOut','onClickSubArc','onMouseOverFinish','onMouseOutFinis'
-  ,'onClickFinish']
+  props: ['hierarchy','graph','drawingGroup', 'w','h','data', 'canvasId','colorScheme','onMouseOver','onMouseOut','onClickSubArc','onMouseOverFinish','onMouseOutFinis'
+  ,'onClickFinish','currentLevelEntity','selectedEntities','entityLabelKey']
   ,
   methods: {
     _update(drawingGroup, w, h, props) {
@@ -35,7 +35,7 @@ export default {
         hierarchy: props.hierarchy,
         currentLevelEntity: props.currentLevelEntity,
         selectedEntities: props.selectedEntities,
-        graph: graph,
+        graph: props.graph,
         entityLabelKey: props.entityLabelKey,
         outerRadius: outerRadius
       })
