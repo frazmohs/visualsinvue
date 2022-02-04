@@ -1,4 +1,3 @@
-
 <script>
 /* eslint-disable no-unused-vars */
 import { defineComponent } from '@vue/composition-api'
@@ -23,8 +22,7 @@ import { attachEvent, detachEvent } from "./events"
 export default {
   name: "chord-component",
   props: ['hierarchy','graph','drawingGroup', 'w','h','data', 'canvasId','colorScheme','onMouseOver','onMouseOut','onClickSubArc','onMouseOverFinish','onMouseOutFinis'
-  ,'onClickFinish','currentLevelEntity','selectedEntities','entityLabelKey']
-  ,
+  ,'onClickFinish','currentLevelEntity','selectedEntities','entityLabelKey'],
   methods: {
     _update(drawingGroup, w, h, props) {
       let { innerRadius, outerRadius } = computeDimensions(w, h)
