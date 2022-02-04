@@ -1,5 +1,6 @@
-var myWidget = swidgets.XocesWidget.new({
-
+console.log('n');
+var myWidget = visualsinvue.widgets.XocesWidget.new({
+z
     // in this made-up example, we have a top level group. Within this top-level group, we have smaller groups.
     // ...within groups, we have teams. Within a team, we have people.
     hierarchy: ['top-level-group', 'group', 'team', 'person'],     
@@ -41,3 +42,4 @@ var myWidget = swidgets.XocesWidget.new({
       targetRef: 'targetId',
     },
   });
+  document.getElementById('w').append(myWidget)
