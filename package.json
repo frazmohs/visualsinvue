@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wombats-writing-code/xoces.git"
+    "url": "git+https://github.com/frazmohs/visualsinvue"
   },
   "keywords": [
     "data visualization",
@@ -23,12 +23,9 @@
     "dist",
     "src"
   ],
-  "author": "MIT Mapping Lab",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wombats-writing-code/xoces/issues"
-  },
-  "homepage": "https://github.com/wombats-writing-code/xoces#readme",
+  "author": "Sayyed Faraz Mohseni",
+  "license": "Faraz",
+  "homepage": "https://github.com/frazmohs/visualsinvue",
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
