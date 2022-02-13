@@ -7,8 +7,7 @@ import { CHORD_VIEW, TREE_VIEW } from "../../reducers"
 import graphProvider from "../../components/graph"
 
 export default {
-  {
-  name: "xoces-widget",
+  name: "XocesWidget",
   props: ['hierarchy','relationship','graph','drawingGroup','data', 'canvasId','colorScheme','onMouseOver','onMouseOut','onClickSubArc','onMouseOverFinish','onMouseOutFinis'
   ,'onClickFinish','currentLevelEntity','selectedEntities','entityLabelKey'],
   components: {
