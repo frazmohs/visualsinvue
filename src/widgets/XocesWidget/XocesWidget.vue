@@ -5,7 +5,7 @@ import ChordComponent from "../../components/ChordComponent"
 import TreeComponent from "../../components/TreeComponent"
 import { CHORD_VIEW, TREE_VIEW } from "../../reducers"
 import graphProvider from "../../components/graph"
-
+import { Template } from "webpack"
 export default {
   name: "XocesWidget",
   props: ['hierarchy','relationship','graph','drawingGroup','data', 'canvasId','colorScheme','onMouseOver','onMouseOut','onClickSubArc','onMouseOverFinish','onMouseOutFinis'
@@ -15,8 +15,8 @@ export default {
     TreeComponent,
     BreadcrumbsNav,
     HierarchicalListSearch
-  },
-  render() {
+  }
+}
     let graph = graphProvider(this.props.relationship)
     // console.log('props in XocesWidget', this.props)
     let component
@@ -39,9 +39,10 @@ export default {
 
       // console.log(nodes)
       component = <tree-component {...this} nodes={nodes} />
-    }
-
-    return (
+}
+</script>
+<template>
+    
       <div class="xoces-widget">
         <breadcrumbs-nav
           breadcrumbs={this.props.breadcrumbs}
@@ -72,7 +73,4 @@ export default {
           </div>
         </div>
       </div>
-    )
-  }
-}
-</script>
+</template>

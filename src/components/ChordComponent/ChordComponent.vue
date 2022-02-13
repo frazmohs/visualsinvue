@@ -1,7 +1,5 @@
-<script>
-/* eslint-disable no-unused-vars */
-import { defineComponent } from '@vue/composition-api'
-import * as d3 from "d3-selection"
+<script setup>
+//import * as d3 from "d3-selection"
 import "./ChordComponent.scss"
 import { computeDimensions, computeLayout } from "./layout"
 import { init } from "../canvas"

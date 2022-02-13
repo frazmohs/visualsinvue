@@ -3,6 +3,14 @@
   "version": "1.2.47",
   "description": "Interactive chord and tree visualization widget",
   "main": "index.js",
+  "jest": {
+    "testMatch": [
+      "<rootDir>/**/**"
+    ],
+    "transform": {
+      "\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
+  },
   "scripts": {
     "start": "webpack-dev-server --open --config ./webpack/webpack-dev.config.js",
     "test": "jest",
@@ -27,11 +35,12 @@
   "license": "Faraz",
   "homepage": "https://github.com/frazmohs/visualsinvue",
   "devDependencies": {
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
-    "vue": "^3.1.0",
     "babel-core": "^6.13.2",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^6.2.4",
@@ -55,6 +64,7 @@
     "style-loader": "^0.13.1",
     "uglifyjs-webpack-plugin": "^0.3.1",
     "url-loader": "^0.5.8",
+    "vue": "^3.2.31",
     "webpack": "^2.1.0-beta.25",
     "webpack-auto-inject-version": "^0.2.11",
     "webpack-dev-server": "^2.1.0-beta.0"
