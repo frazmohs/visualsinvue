@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Xoces</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jquery and lodash are loaded below for convenience only (to fetch example data sets).
+      You do NOT need to load them if you're using the UMD, already-bundled version of Xoces
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
+</head>
+<body>
+  <div id="root" style="height: 100%"></div>
+</body>
+
+<h1>Xoces example</h1>
+
+<div id="xocesContainer"></div>
+<div id="xocesChordWidgetContainer"></div>
+<div id="xocesTreeWidgetContainer"></div>
+
+<!-- Load the complete bundle (~800K) in webpack-dev-server memory when in development -->
+<script src="/xoces-umd.js"></script>
+
+<!-- You can also load the complete bundle (~800K) from the built /umd folder  -->
+<!-- <script src="/umd/xoces-umd.js"></script> -->
+
+<!-- XocesWidget: dummy data -->
+<!-- <script src="/examples/example1.js"></script>> -->
+
+<!-- XocesWidget: SUTDoces  -->
+<script src="/examples/example2.js"></script>
+
+<!-- XocesWidget: MIToces -->
+<!-- <script src="/examples/example3.js"></script> -->
+
+<!-- Chord widget only: dummy data  -->
+<!-- <script src="/examples/example4.js"></script> -->
+
+<!-- Tree widget only: dummy data  -->
+<!-- <script src="/examples/example5.js"></script> -->
+</html>
