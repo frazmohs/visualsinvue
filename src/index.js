@@ -27,7 +27,6 @@ module.exports = {
      XocesWidget: {
        new: (config) => {
          let uid = _.uniqueId('xoces_widget_');
-
          return {
            render(arg) {
              let container = _getContainer(arg.container);
